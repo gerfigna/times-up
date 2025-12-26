@@ -2,7 +2,7 @@
 
 Este proyecto es una version generada por IA para crear el juego de cartas de Times Up.
 
-El objetivo es producir los naipes y materiales necesarios para jugar, a partir de una lista de palabras o categorias.
+El objetivo es producir los materiales necesarios para jugar, a partir de una lista de personajes.
 
 ## Contenido
 
