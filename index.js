@@ -12,9 +12,7 @@ if (!fs.existsSync(inputPath)) {
 
 const rawBuffer = fs.readFileSync(inputPath);
 let raw = rawBuffer.toString('utf8');
-if (raw.includes('\uFFFD')) {
-  raw = rawBuffer.toString('latin1');
-}
+
 const lines = raw.split(/\r?\n/);
 if (lines.length && lines[lines.length - 1] === '') {
   lines.pop();
@@ -24,30 +22,14 @@ for (let i = lines.length - 1; i > 0; i -= 1) {
   [lines[i], lines[j]] = [lines[j], lines[i]];
 }
 
-const mm = (value) => (value * 72) / 25.4;
-
-const doc = new PDFDocument({ size: 'A4', layout: 'landscape', margin: 0 });
-doc.pipe(fs.createWriteStream(outputPath));
-
+const fontName = 'FunFont';
 const backgroundPath = path.join(__dirname, 'background.png');
-if (!fs.existsSync(backgroundPath)) {
-  console.error(`No existe el fichero de fondo: ${backgroundPath}`);
-  process.exit(1);
-}
+const mm = (value) => (value * 72) / 25.4;
+const doc = new PDFDocument({ size: 'A4', layout: 'landscape', margin: 0 });
 
+doc.pipe(fs.createWriteStream(outputPath));
 doc.openImage(backgroundPath);
-
-const funFontCandidates = [
-  path.join(__dirname, 'Marker Felt.ttf'),
-  '/System/Library/Fonts/Supplemental/PartyLET-plain.ttf',
-  '/System/Library/Fonts/Supplemental/Chalkduster.ttf',
-  '/System/Library/Fonts/Supplemental/Comic Sans MS.ttf',
-];
-const funFontPath = funFontCandidates.find((candidate) => fs.existsSync(candidate));
-const fontName = funFontPath ? 'FunFont' : 'Helvetica';
-if (funFontPath) {
-  doc.registerFont(fontName, funFontPath);
-}
+doc.registerFont(fontName, path.join(__dirname, 'Marker Felt.ttf'));
 
 const pageWidth = doc.page.width;
 const pageHeight = doc.page.height;
