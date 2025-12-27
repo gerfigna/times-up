@@ -3,6 +3,5 @@ node_modules
 .DS_Store
 naipes.*
 print.*
-personajes.txt
-characters.txt
-
+personajes.*
+characters.*

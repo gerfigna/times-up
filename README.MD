@@ -9,6 +9,16 @@ El objetivo es producir los materiales necesarios para jugar, a partir de una li
 - Archivos y recursos para generar las cartas.
 - Materiales finales en PDF para imprimir.
 
+## Uso
+
+```sh
+node index.js personajes.txt print.pdf
+```
+
+## Ejemplo
+
+<img src="output.jpg" alt="Ejemplo de salida">
+
 ## Nota
 
 Este repositorio es un experimento de generacion asistida por IA y no es una version oficial del juego.

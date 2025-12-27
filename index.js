@@ -2,8 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const PDFDocument = require('pdfkit');
 
-const inputPath = process.argv[2] || path.join(__dirname, 'naipes.txt');
-const outputPath = process.argv[3] || path.join(__dirname, 'naipes.pdf');
+const inputPath = process.argv[2] || path.join(__dirname, 'personajes.txt');
+const outputPath = process.argv[3] || path.join(__dirname, 'print.pdf');
 
 if (!fs.existsSync(inputPath)) {
   console.error(`No existe el fichero de entrada: ${inputPath}`);
