@@ -1,15 +1,14 @@
-# Times Up - Version generada por IA
+# Time's Up!
 
-Este proyecto es una version generada por IA para crear el juego de cartas de Times Up.
-
-El objetivo es producir los materiales necesarios para jugar, a partir de una lista de personajes.
+El objetivo es producir los materiales necesarios para jugar a partir de una lista de personajes.
 
 ## Contenido
 
-- Archivos y recursos para generar las cartas.
-- Materiales finales en PDF para imprimir.
+- Código y recursos para generar los naipes
 
 ## Uso
+
+Crea un listado de personajes en un archivo de texto y ejecuta el siguiente comando:
 
 ```sh
 node index.js personajes.txt print.pdf
