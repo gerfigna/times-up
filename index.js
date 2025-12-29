@@ -34,7 +34,7 @@ doc.registerFont(fontName, path.join(__dirname, 'Marker Felt.ttf'));
 const pageWidth = doc.page.width;
 const pageHeight = doc.page.height;
 const cardWidth = mm(95);
-const cardHeight = mm(61.5);
+const cardHeight = mm(64.5);
 const gutter = 0;
 const columns = 3;
 const rows = 3;
