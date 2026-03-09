@@ -1,4 +1,4 @@
-# Time's Up!
+# ContraReloj
 
 El objetivo es producir los materiales necesarios para jugar a partir de una lista de personajes.
 
